@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+.hidden {
+  display: none;
+}
+#quote span {
+  display: block;
+}
+#quote span:first-child::before,
+#quote span:first-child::after {
+  content: '"';
+}
+#quote span:last-child {
+  margin-top: 0.5rem;
+}
+#quote span:last-child::before {
+  content: '-';
+  margin-right: 0.5rem;
+}
