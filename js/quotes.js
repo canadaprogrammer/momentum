@@ -89,11 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       quote:
-        'The greatest glory in living lies not in never falling, but in rising every time we fall.',
-      author: 'Nelson Mandela',
-    },
-    {
-      quote:
         "In the end, it's not the years in your life that count. It's the life in your years.",
       author: 'Abraham Lincoln',
     },
@@ -197,8 +192,8 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   ];
 
-  const quote = document.querySelector('#quote span:first-child');
-  const author = document.querySelector('#quote span:last-child');
+  const quote = document.querySelector('#quote');
+  const author = document.querySelector('#quote-wrapper .author');
   const random_quote = quotes[Math.floor(Math.random() * quotes.length)];
   quote.innerText = random_quote.quote;
   author.innerText = random_quote.author;

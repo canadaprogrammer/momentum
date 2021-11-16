@@ -3,21 +3,147 @@ body {
   padding: 0;
   box-sizing: border-box;
   text-align: center;
+  font-size: 1.3rem;
 }
 .hidden {
   display: none;
 }
-#quote span {
+#momentum-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  justify-content: space-between;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+}
+.top,
+.bottom {
+  flex: 1 0 0;
+}
+.center-above,
+.center-below {
+  flex: 3 0 0;
+}
+.center {
+  flex: 2 0 0;
+}
+h1,
+h2,
+h3 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+h1 {
+  font-size: 6em;
+}
+h2 {
+  font-size: 2em;
+}
+.top {
+  align-items: flex-end;
+}
+.bottom {
+  justify-content: flex-end;
+}
+.center-below {
+  overflow-y: hidden;
+}
+#todo-title span {
+  display: none;
+  margin-left: 0.5rem;
+}
+#todo-title {
+  cursor: pointer;
+}
+#todo-title:hover span {
+  display: inline-block;
+}
+#todo-title.hide {
+  display: none;
+}
+#todo-input {
+  display: none;
+}
+#todo-input.show {
   display: block;
 }
-#quote span:first-child::before,
-#quote span:first-child::after {
+#todo-input input {
+  font-size: 1em;
+  padding: 0.5rem 1rem;
+  width: 284px;
+  margin-bottom: 0.7rem;
+}
+#todo-input button {
+  padding: 0.5rem 1rem;
+  font-size: 1em;
+}
+#todo-list {
+  margin-top: 0;
+  overflow-y: auto;
+  padding-left: 0;
+  min-width: 200px;
+}
+#todo-list li {
+  display: flex;
+  justify-content: space-between;
+}
+#todo-list li button {
+  margin-left: 0.5rem;
+  color: red;
+  font-weight: bold;
+}
+#quote-wrapper span {
+  display: block;
+}
+#quote::before,
+#quote::after {
   content: '"';
 }
-#quote span:last-child {
+#quote-wrapper .author {
   margin-top: 0.5rem;
+  display: none;
 }
-#quote span:last-child::before {
+#quote-wrapper:hover .author {
+  display: block;
+}
+#quote-wrapper .author::before {
   content: '-';
   margin-right: 0.5rem;
+}
+@media only screen and (max-width: 1199px) {
+  h1,
+  h2,
+  h3 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  h1 {
+    font-size: 4em;
+  }
+  h3 {
+    font-size: 1.4em;
+  }
+}
+@media only screen and (max-width: 575px) {
+  body {
+    font-size: 1rem;
+  }
+  .center-above {
+    display: none;
+  }
+  #todo-input input {
+    width: 170px;
+    margin-bottom: 0.6rem;
+  }
+  #todo-input input,
+  #todo-input button {
+    padding: 0.2rem 0.5rem;
+  }
 }

@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   const toDoForm = document.querySelector('#todo-form');
-  const toDoInput = document.querySelector('#todo-form input');
+  const todoTitle = document.querySelector('#todo-title');
+  const toDoInputWrapper = document.querySelector('#todo-input');
+  const toDoInput = document.querySelector('#todo-input input');
   const toDoList = document.querySelector('#todo-list');
 
   const TODOS_KEY = 'todos';
@@ -39,6 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
     toDos.push(newToDoObj);
     printToDo(newToDoObj);
     saveToDos();
+    todoTitle.classList.toggle('hide');
+    toDoInputWrapper.classList.toggle('show');
   };
   toDoForm.addEventListener('submit', handleToDoSubmit);
 
@@ -64,4 +68,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // toDos.forEach((todo) => printToDo(todo));
     parseToDos.forEach(printToDo);
   }
+
+  const todoClick = (event) => {
+    todoTitle.classList.toggle('hide');
+    toDoInputWrapper.classList.toggle('show');
+    toDoInput.focus();
+  };
+  todoTitle.addEventListener('click', todoClick);
 });

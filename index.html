@@ -14,20 +14,35 @@
   <script refer src="/js/todos.js"></script>
 </head>
 <body>
-  <form id="login-form" class="hidden">
-    <input type="text" placeholder="What is your name?" required maxlength="15"/>
-    <button>Log In</button>
-  </form>
-  <h1 id="greeting" class="hidden"></h1>
-  <h2 id="clock">00 : 00 : 00</h2>
-  <div id="quote">
-    <span></span>
-    <span></span>
+  <div id="momentum-wrapper">
+    <section class="top">
+      <div id="weather"></div>
+    </section>
+    <section class="center-above"></section>
+    <section class="center">
+      <h1 id="clock">00:00:00</h1>
+      <form id="login-form" class="hidden">
+        <input type="text" placeholder="What is your name?" required maxlength="15"/>
+        <button>Log In</button>
+      </form>
+      <h2 id="greeting" class="hidden"></h2>
+    </section>
+    <section class="center-below">
+      <form id="todo-form">
+        <h3 id="todo-title">Todos<span>- Add</span></h3>
+        <div id="todo-input">
+          <input type="text" placeholder="Write a ToDo and Press Enter" required/>
+          <button type="submit">Add</button>
+        </div>
+      </form>
+      <ul id="todo-list"></ul>
+    </section>
+    <section class="bottom">
+      <div id="quote-wrapper">
+        <span id='quote'></span>
+        <span class='author'></span>
+      </div>
+    </section>
   </div>
-  <div id="weather"></div>
-  <form id="todo-form">
-    <input type="text" placeholder="Write a To Do and Press Enter" required/>
-  </form>
-  <ul id="todo-list"></ul>
 </body>
 </html>
